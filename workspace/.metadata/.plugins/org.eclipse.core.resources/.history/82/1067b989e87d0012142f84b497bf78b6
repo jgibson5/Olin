@@ -1,0 +1,80 @@
+/**
+ * 
+ */
+package net.joegibson.huffman;
+import java.io.*;
+import java.util.HashMap;
+import java.util.PriorityQueue;
+/**
+ * @author jgibson
+ *
+ */
+public class Histogram {
+
+	private HashMap<String, Integer> charCount;
+	private PriorityQueue<Node> priorityQueue = new PriorityQueue();
+
+	/**
+	 * @param args
+	 */
+	
+	public Histogram() {
+		charCount = new HashMap<String, Integer>();
+	}
+	
+	
+	public String toString() {
+		return charCount.toString();
+	}
+	
+	public void count(String s) {
+		for (int i=0; i<s.length(); i++) {
+			count(s.charAt(i));
+		}
+		
+	}
+	
+	public void count(Character c) {
+		if (charCount.containsKey(c.toString())) {
+			charCount.put(c.toString(), charCount.get(c.toString()) + 1);
+		} else {
+			charCount.put(c.toString(), 1);
+		}
+	}
+	
+	public int freq(Character c) {
+		if (charCount.get(c.toString()) != null) {
+			return charCount.get(c.toString());
+		} else {
+			return 0;
+		}
+	}
+	
+	public void readTest(String filePath) {
+		try {
+			File myFile = new File(filePath);
+			FileReader fileReader = new FileReader(myFile);
+			
+			BufferedReader reader = new BufferedReader(fileReader);
+			
+			String line = null;
+			
+			while ((line = reader.readLine()) != null) {
+				System.out.println(line);
+				count(line);
+			}
+			
+			reader.close();
+			System.out.println(this.toString());
+			
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	private void fillQueue() {
+		for (String k:charCount.keySet()) {
+			
+		}
+	}
+}

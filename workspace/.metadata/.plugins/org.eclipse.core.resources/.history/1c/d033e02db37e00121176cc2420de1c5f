@@ -1,0 +1,64 @@
+/**
+ * 
+ */
+package net.joegibson.huffman;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+/**
+ * @author jgibson
+ *
+ */
+public class HistogramTest {
+	@Test
+	public void testHistogram() {
+		Histogram h = new Histogram();
+		h.readTest("/home/jgibson/Documents/test.py");
+		System.out.println(h.getPriorityQueue());
+		while (h.getPriorityQueue().peek() != null) {
+			Node n = h.getPriorityQueue().poll();
+			//System.out.println(n);
+		}
+	}
+
+	@Test
+	public void testCount() {
+		Histogram h = new Histogram();
+		h.count("moose");
+		assertEquals("{e=1, s=1, o=2, m=1}", h.toString());
+	}
+
+	@Test
+	public void testCountChar() {
+		Histogram h = new Histogram();
+		h.count('a');
+		assertEquals("{a=1}", h.toString());
+	}
+	
+	@Test
+	public void testFreq() {
+		Histogram h = new Histogram();
+		h.count("moose");
+		assertEquals(2, h.freq('o'));
+	}
+	
+	@Test
+	public void testNodeCompare() {
+		Node n1 = new Node("a", 2);
+		Node n2 = new Node("b", 5);
+		assertEquals(true, n1.compareTo(n2) < 0);
+	}
+	
+	@Test
+	public void testConstruct() {
+		HuffmanTree tree = new HuffmanTree();
+		Histogram h = new Histogram();
+		tree.construct(h, "/home/jgibson/Documents/test.py");
+		//System.out.println(tree.toString());
+		System.out.println(tree.encode("A"));
+	}
+	
+	
+}

@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+package net.joegibson.huffman;
+import java.util.HashMap;
+/**
+ * @author jgibson
+ *
+ */
+public class Histogram {
+
+	private HashMap<String, Integer> charCount;
+
+	/**
+	 * @param args
+	 */
+	
+	public Histogram() {
+		HashMap<String, Integer> charCount = new HashMap<String, Integer>();
+	}
+	
+	
+	public String toString() {
+		return charCount.toString();
+	}
+	
+	public void count(String s) {
+		
+	}
+	
+	public void count(Character c) {
+		if (charCount.containsKey(c)) {
+			charCount.put(c.toString(), charCount.get(c) + 1);
+		} else {
+			charCount.puts(c.toString(), 1);
+		}
+	}
+	
+	public int freq(Character c) {
+		return 0;
+	}
+
+}

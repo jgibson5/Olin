@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repo/courses/fa12/engr3525/!svn/ver/518/jgibson/sched
+END
+cpuloop
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repo/courses/fa12/engr3525/!svn/ver/518/jgibson/sched/cpuloop
+END
+ioloop
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repo/courses/fa12/engr3525/!svn/ver/518/jgibson/sched/ioloop
+END
+cpuloop.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repo/courses/fa12/engr3525/!svn/ver/518/jgibson/sched/cpuloop.c
+END
+ioloop.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repo/courses/fa12/engr3525/!svn/ver/518/jgibson/sched/ioloop.c
+END
+hw04_report.pdf
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repo/courses/fa12/engr3525/!svn/ver/522/jgibson/sched/hw04_report.pdf
+END
+temp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repo/courses/fa12/engr3525/!svn/ver/518/jgibson/sched/temp
+END
+alarm
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repo/courses/fa12/engr3525/!svn/ver/518/jgibson/sched/alarm
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repo/courses/fa12/engr3525/!svn/ver/518/jgibson/sched/Makefile
+END
+alarm.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repo/courses/fa12/engr3525/!svn/ver/518/jgibson/sched/alarm.c
+END

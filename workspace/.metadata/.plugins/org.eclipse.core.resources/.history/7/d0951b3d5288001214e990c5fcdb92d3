@@ -1,0 +1,127 @@
+/**
+ * @author jgibson
+ *
+ */
+
+import java.io.*;
+import java.net.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class Crawler {
+	
+	private PriorityQueue<URL> q = new PriorityQueue<URL>(11, (new UrlComparator()));
+	private int delay = 1000;
+	private String pattern = "<a href=['\"]([^ ]*)['\"].*>(.*)</a>";
+	private HashSet<URL> visited = new HashSet<URL>();
+	
+	public Crawler() {
+		
+	}
+	
+	public Crawler(String start) {
+		startCrawl(start);
+	}
+	
+	public void startCrawl(String start) {
+		URL url;
+		try {
+			url = new URL(start);
+			q.add(url);
+			crawl();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void crawl() {
+		URL current;
+		URLConnection conn;
+		BufferedReader in;
+		String inputLine;
+		Matcher matcher;
+		
+		int count = 0;
+		while (q.peek() != null) {
+			current = q.poll();
+			System.out.println("Count: " + count);
+			try {
+				conn = current.openConnection();
+				in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+				while ((inputLine = in.readLine()) != null) {
+					if ((matcher = parse(inputLine)) != null) {
+						URL u = new URL(current, matcher.group(1));
+						System.out.println(matcher.group(1) + "\n" + matcher.group(2));
+						if (!visited.contains(u)) {
+							visited.add(u);
+							q.add(u);
+						}
+					}
+				}
+				in.close();
+				count++;
+				if (count > 5) {
+					return;
+				}
+				Thread.sleep(this.delay);
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			
+		}
+	}
+	
+	public Matcher parse(String text) {
+		Pattern pattern = Pattern.compile(this.pattern);
+	    Matcher matcher = pattern.matcher(text);
+	    while (matcher.find()) {
+	    	System.out.println(matcher.group(1));
+	    	System.out.println(matcher.group(2));
+	    	return matcher;
+	    }
+	    return null;
+	}
+	
+	/**
+	 * @return the delay
+	 */
+	public int getDelay() {
+		return delay;
+	}
+
+	/**
+	 * @param delay the time between url lookups
+	 */
+	public void setDelay(int delay) {
+		this.delay = delay;
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Crawler c = new Crawler();
+		c.startCrawl("http://stackoverflow.com/questions/8181265/java-regular-expression-get-substring");
+
+	}
+
+	/**
+	 * @return the visited
+	 */
+	public HashSet getVisited() {
+		return visited;
+	}
+
+	/**
+	 * @param visited the visited to set
+	 */
+	public void setVisited(HashSet visited) {
+		this.visited = visited;
+	}
+
+
+
+}

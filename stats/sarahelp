@@ -1,0 +1,8 @@
+import Pmf
+
+def levene(l1, l2):
+	Pmf.MakePmfFromList(l1)
+	Pmf.MakePmfFromList(l2)
+	v1 = Pmf.var()
+	v2 = Pmf.var()
+	return v1/v2

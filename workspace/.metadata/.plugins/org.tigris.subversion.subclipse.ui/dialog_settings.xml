@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="553" key="SetSvnPropertyDialog.size.y"/>
+	<item value="108" key="SetSvnPropertyDialog.location.y"/>
+	<item value="395" key="passwordStores.size.y"/>
+	<item value="512" key="passwordStores.size.x"/>
+	<item value="213" key="passwordStores.location.y"/>
+	<item value="497" key="passwordStores.location.x"/>
+	<item value="613" key="SetSvnPropertyDialog.size.x"/>
+	<item value="https://svn.olin.edu/repo/courses/sp13/engr3599/jgibson" key="RepositorySelectionPage.lastRepository"/>
+	<item value="447" key="SetSvnPropertyDialog.location.x"/>
+	<item value="" key="DirectorySelectionPage.lastParent_https://svn.olin.edu/repo/courses/sp13/engr3599/jgibson"/>
+	<section name="NewLocationWizard">
+		<list key="ConfigurationWizardMainPage.STORE_URL_ID">
+			<item value="https://svn.olin.edu/repo/courses/sp13/engr3599/jgibson"/>
+			<item value=""/>
+		</list>
+	</section>
+</section>

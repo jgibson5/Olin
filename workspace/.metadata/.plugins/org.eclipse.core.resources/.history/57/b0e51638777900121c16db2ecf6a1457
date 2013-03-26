@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package net.joegibson.huffman;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+/**
+ * @author jgibson
+ *
+ */
+public class HistogramTest1 {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,4 @@
+1361153878174	Convert local variable 'charCount' to field
+1361643022744	Delete element
+1361643895378	Encapsulate field 'character'
+1361643902763	Encapsulate field 'freq'

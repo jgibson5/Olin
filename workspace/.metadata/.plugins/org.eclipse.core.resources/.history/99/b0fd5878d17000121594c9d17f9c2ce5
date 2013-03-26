@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+
+/**
+ * @author jgibson
+ *
+ */
+public class AnimalTest {
+	public static void main() {
+		System.out.println("TEST");
+	}
+
+}

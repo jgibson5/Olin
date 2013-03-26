@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repo/courses/fa12/engr3525/!svn/ver/1509/jgibson/hw16/roman
+END
+tcpserv01.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repo/courses/fa12/engr3525/!svn/ver/1524/jgibson/hw16/roman/tcpserv01.c
+END
+error.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repo/courses/fa12/engr3525/!svn/ver/1509/jgibson/hw16/roman/error.c
+END
+wrapsock.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repo/courses/fa12/engr3525/!svn/ver/1509/jgibson/hw16/roman/wrapsock.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repo/courses/fa12/engr3525/!svn/ver/1509/jgibson/hw16/roman/Makefile
+END
+tcpcli01
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repo/courses/fa12/engr3525/!svn/ver/1524/jgibson/hw16/roman/tcpcli01
+END
+wraplib.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repo/courses/fa12/engr3525/!svn/ver/1509/jgibson/hw16/roman/wraplib.c
+END
+tcpserv01
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repo/courses/fa12/engr3525/!svn/ver/1524/jgibson/hw16/roman/tcpserv01
+END
+str_cli08.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repo/courses/fa12/engr3525/!svn/ver/1524/jgibson/hw16/roman/str_cli08.c
+END
+unp.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repo/courses/fa12/engr3525/!svn/ver/1509/jgibson/hw16/roman/unp.h
+END
+writen.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repo/courses/fa12/engr3525/!svn/ver/1509/jgibson/hw16/roman/writen.c
+END
+wrapstdio.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repo/courses/fa12/engr3525/!svn/ver/1509/jgibson/hw16/roman/wrapstdio.c
+END
+wrapunix.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repo/courses/fa12/engr3525/!svn/ver/1509/jgibson/hw16/roman/wrapunix.c
+END
+str_echo08.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repo/courses/fa12/engr3525/!svn/ver/1524/jgibson/hw16/roman/str_echo08.c
+END
+tcpcli01.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repo/courses/fa12/engr3525/!svn/ver/1509/jgibson/hw16/roman/tcpcli01.c
+END
+readline.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repo/courses/fa12/engr3525/!svn/ver/1509/jgibson/hw16/roman/readline.c
+END

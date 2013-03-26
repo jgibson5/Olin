@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repo/courses/fa12/engr3525/!svn/ver/804/jgibson/hw08
+END
+-a
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repo/courses/fa12/engr3525/!svn/ver/804/jgibson/hw08/-a
+END
+tee
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repo/courses/fa12/engr3525/!svn/ver/804/jgibson/hw08/tee
+END
+test.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repo/courses/fa12/engr3525/!svn/ver/804/jgibson/hw08/test.txt
+END
+tee.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repo/courses/fa12/engr3525/!svn/ver/804/jgibson/hw08/tee.c
+END

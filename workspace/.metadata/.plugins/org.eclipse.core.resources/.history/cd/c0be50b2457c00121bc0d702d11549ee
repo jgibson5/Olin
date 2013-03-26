@@ -1,0 +1,115 @@
+/**
+ * 
+ */
+package com.allendowney.btree;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
+
+
+/** Implementation of a the Set interface using a B-Tree.
+ * 
+ * @author downey
+ *
+ */
+public class BTree implements Set<Integer> {
+	/** BTree is pretty much a wrapper for Node.
+	 * 
+	 */
+	Node node = new Node();
+	
+	@Override
+	public String toString() {
+		return node.toString();
+	}
+	
+	@Override
+	public boolean add(Integer e) {
+		return node.addKey(e);
+	}
+
+	@Override
+	public boolean addAll(Collection<? extends Integer> coll) {
+		return false;
+	}
+
+	@Override
+	public void clear() {
+	}
+
+	@Override
+	public boolean contains(Integer e) {
+		return node.contains(e);
+	}
+
+	@Override
+	public boolean containsAll(Collection<?> coll) {
+		return false;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return node.isEmpty();
+	}
+
+	@Override
+	public Iterator<Integer> iterator() {
+		ArrayList<Integer> list = collectElements();
+		return list.iterator();
+	}
+
+	@Override
+	public boolean remove(Object e) {
+		// you do not need to implement this.
+		throw new RuntimeException("Not implemented.");
+	}
+
+	@Override
+	public boolean removeAll(Collection<?> arg0) {
+		// you do not need to implement this.
+		throw new RuntimeException("Not implemented.");
+	}
+
+	@Override
+	public boolean retainAll(Collection<?> arg0) {
+		// you do not need to implement this.
+		throw new RuntimeException("Not implemented.");
+	}
+
+	@Override
+	public int size() {
+		return 0;
+	}
+
+	@Override
+	public Object[] toArray() {
+		ArrayList<Integer> list = collectElements();
+		return list.toArray();
+	}
+
+	@Override
+	public <T> T[] toArray(T[] array) {
+		ArrayList<Integer> list = collectElements();
+		return list.toArray(array);
+	}
+
+	/** Collects all of the elements in the Tree into a List.
+	 * @return
+	 */
+	private ArrayList<Integer> collectElements() {
+		return null;
+	}
+
+	/** Takes the root node from btree2 and puts it at the location for i.
+	 * 
+	 * This is not part of the Set interface; it is used for testing.
+	 * 
+	 * @param i
+	 * @param btree2
+	 */
+	public void setNode(int i, BTree btree2) {
+		node.setNode(i, btree2.node);
+	}
+}

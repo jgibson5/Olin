@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package net.joegibson.huffman;
+
+/**
+ * @author jgibson
+ *
+ */
+public class HuffmanTree{
+	public Node bigTree;
+	
+	public String Encode(String string){
+		return null;
+	}
+	
+	public String Decode(String binary){
+		return null;
+	}
+	
+	public void construct(Histogram h, filePath){
+		h.readTest(filePath);
+		
+	}
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+
+	}
+
+}

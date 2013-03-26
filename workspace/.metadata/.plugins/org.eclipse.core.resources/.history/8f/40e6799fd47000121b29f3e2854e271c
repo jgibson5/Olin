@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+
+/**
+ * @author jgibson
+ *
+ */
+public class AnimalTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.out.println("TEST");
+		
+		Dog d = new Dog();
+		Cat c = new Cat();
+		
+		d.makeNoise();
+		c.makeNoise();
+		
+		d.setSize(20);
+		c.setSize(1);
+		System.out.println(d.isBigger(c));
+		
+		AnimalPack animals = new AnimalPack();
+		animals.addAnimal(0, c);
+		animals.addAnimal(0, d);
+	}
+
+}

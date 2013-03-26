@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+
+/**
+ * @author jgibson
+ *
+ */
+public class AnimalTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.out.println("TEST");
+		
+		Dog d = new Dog();
+		Cat c = new Cat();
+		
+		d.makeNoise();
+		c.makeNoise();
+
+	}
+
+}

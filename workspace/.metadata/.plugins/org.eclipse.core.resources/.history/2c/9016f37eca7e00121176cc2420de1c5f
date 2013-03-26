@@ -1,0 +1,73 @@
+/**
+ * 
+ */
+package net.joegibson.huffman;
+
+/**
+ * @author jgibson
+ *
+ */
+public class HuffmanTree{
+	public Node bigTree;
+	
+	public String encode(String string){
+		String encodedString = "";
+		for (Character c: string.toCharArray()){
+			String s = c.toString();
+			encodedString = encodedString + bigTree.encode(s, "");
+		}
+		return encodedString;
+	}
+	/*
+	public String traverseTree(String s){
+		LinkedList<Node> q = new LinkedList<Node>();
+		q.add(bigTree);
+		String encodedString = "";
+		while (q.peek() != null){
+			if (q.peek().getCharacter() == s){
+				return encodedString;
+			}
+			else {
+				Node parent = q.poll();
+				encodedString = encodedString + 
+				q.add(parent.getChildren()[0]);
+				q.add(parent.getChildren()[1]);
+			}
+		}
+		return null;
+	}
+	*/
+	
+	public void construct(Histogram h, String filePath){
+		h.readTest(filePath);
+		while (h.getPriorityQueue().size() >1){
+			Node childNode1 = h.poll();
+			Node childNode2 = h.poll();
+			Node parent = new Node(childNode1, childNode2);
+			h.addToQueue(parent);
+		}
+		bigTree = h.poll();
+	}
+
+	public String toString(){
+		return bigTree.toString();
+	}
+	public String decode(String encodedString){
+		String decodedString = "";
+		while (encodedString.length() > 0){
+			Node node = bigTree;
+			String nodeCharacter = node.getCharacter();
+			System.out.println(nodeCharacter);
+			while (nodeCharacter == null){
+				Character c = encodedString.charAt(0);
+				Integer b = Integer.parseInt(c.toString());
+				node = node.getChildren()[b];
+				encodedString = encodedString.substring(1);
+			}
+			decodedString = decodedString + node.getCharacter();
+			System.out.println(decodedString);
+		}
+		return decodedString;
+	}
+
+}

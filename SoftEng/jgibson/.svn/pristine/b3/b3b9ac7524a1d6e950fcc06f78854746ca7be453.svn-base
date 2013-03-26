@@ -1,0 +1,73 @@
+package com.allendowney.graph;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+
+/** Represents a graph.
+ * 
+ * @author downey
+ *
+ */
+public class Graph {
+	private ArrayList<Node> nodes = new ArrayList<Node>();
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Graph [nodes=" + nodes + "]";
+	}
+
+	/** Adds a node to the graph.
+	 * 
+	 * @param node
+	 */
+	public void addNode(Node node) {
+		nodes.add(node);
+	}
+	
+	/** Returns true if this graph is a tree; false otherwise.
+	 * 
+	 * @return
+	 */
+	public boolean isTree() {
+	    ArrayList<Node> visited = new ArrayList<Node>();
+	    PriorityQueue<Node> q = new PriorityQueue<Node>();
+	    Node current;
+	    q.add(nodes.get(0));
+	    while (q.peek() != null) {
+	    	current = q.poll();
+	    	visited.add(current);
+	    	for (int i=0; i<current.getChildren().size(); i++) {
+	    		if (visited.contains(current.getChildren().get(i))) {
+	    			return false;
+	    		}
+	    		q.add(current.getChildren().get(i));
+	    	}
+	    }
+		return true;
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Graph g = new Graph();
+		Node node1 = new Node("A");
+		
+		g.addNode(node1);
+		System.out.println(g.isTree());
+
+		Node node2 = new Node("B");
+		node1.addChild(node2);
+		g.addNode(node2);
+		
+		System.out.println(g.isTree());
+		
+		node1.addChild(node1);
+		System.out.println(g.isTree());
+	}
+}

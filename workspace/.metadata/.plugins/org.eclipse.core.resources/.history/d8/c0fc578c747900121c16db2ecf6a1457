@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package net.joegibson.huffman;
+
+/**
+ * @author jgibson
+ *
+ */
+public class HistogramTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		
+		Histogram h = new Histogram();
+		System.out.println(h);
+
+	}
+}

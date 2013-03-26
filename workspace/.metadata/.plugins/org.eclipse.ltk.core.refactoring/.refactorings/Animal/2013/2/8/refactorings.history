@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;Animal.breed&apos; in &apos;Animal&apos;&#x0A;- Original project: &apos;Animal&apos;&#x0A;- Original element: &apos;Animal.breed&apos;&#x0A;- Getter method name: &apos;getBreed&apos;&#x0A;- Setter method name: &apos;setBreed&apos;&#x0A;- Field visibility: &apos;public&apos;&#x0A;- Use getter and setter methods in declaring type&#x0A;- Generate method comments" comments="true" declaring="true" description="Encapsulate field &apos;breed&apos;" flags="589830" getter="getBreed" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;{Animal.java[Animal^breed" insertion="10" setter="setBreed" stamp="1361207263845" version="1.0" visibility="1"/>
+</session>

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repo/courses/fa12/engr3525/!svn/ver/702/jgibson/hw07/lock
+END
+lock.mips.s
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repo/courses/fa12/engr3525/!svn/ver/702/jgibson/hw07/lock/lock.mips.s
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repo/courses/fa12/engr3525/!svn/ver/702/jgibson/hw07/lock/main.c
+END
+lock.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repo/courses/fa12/engr3525/!svn/ver/702/jgibson/hw07/lock/lock.c
+END
+lock.s
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repo/courses/fa12/engr3525/!svn/ver/702/jgibson/hw07/lock/lock.s
+END
+example.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repo/courses/fa12/engr3525/!svn/ver/702/jgibson/hw07/lock/example.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repo/courses/fa12/engr3525/!svn/ver/702/jgibson/hw07/lock/Makefile
+END
+lock.x86.s
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repo/courses/fa12/engr3525/!svn/ver/702/jgibson/hw07/lock/lock.x86.s
+END
+lock.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repo/courses/fa12/engr3525/!svn/ver/702/jgibson/hw07/lock/lock.h
+END

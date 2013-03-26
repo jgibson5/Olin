@@ -1,0 +1,5 @@
+package net.joegibson.huffman;
+
+public class Node {
+	private String character;
+}

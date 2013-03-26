@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repo/courses/fa12/engr3525/!svn/ver/1152/jgibson/test1
+END
+replace
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repo/courses/fa12/engr3525/!svn/ver/1152/jgibson/test1/replace
+END
+replace.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repo/courses/fa12/engr3525/!svn/ver/1152/jgibson/test1/replace.c
+END

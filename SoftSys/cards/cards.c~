@@ -1,0 +1,55 @@
+/* Functions for counting cards in blackjack.
+ * 
+ * Joe Gibson
+ * Software Systems
+ * Olin College
+ * Aug. 30, 2012
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+char get_input()
+{
+  char card_name[3];
+  puts("enter the card_name: ");
+  scanf("%2s", card_name);
+  return card_name;
+}
+
+int main()
+{
+  int count = 0;
+  char * card_name;
+  while (card_name[0] != 'X') {
+    card_name = get_input(card_name);
+    int val = 0;
+    switch(card_name[0]) {
+    case 'K':
+    case 'Q':
+    case 'J':
+      val = 10;
+      break;
+    case 'A':
+      val = 11;
+      break;
+    case 'X':
+      continue;
+    default:
+      val = atoi(card_name);
+      if ((val < 1) || (val > 10)) {
+	puts("I don't undertand that value!");
+	continue;
+      }
+    }
+    if ((val > 2) && (val < 7)) {
+      count++;
+    } else if (val == 10) {
+      count--;
+    }
+    printf("Current count: %i\n", count);
+  }
+  return 0;
+}
+

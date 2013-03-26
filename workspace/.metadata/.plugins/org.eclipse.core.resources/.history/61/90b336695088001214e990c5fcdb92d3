@@ -1,0 +1,16 @@
+import java.util.Comparator;
+import java.util.regex.Matcher;
+
+/**
+ * @author jgibson
+ *
+ */
+public class MatcherComparator implements Comparator<Matcher>{
+
+	@Override
+	public int compare(Matcher m1, Matcher m2) {
+		
+		return m1.group(1).compareTo(m2.group(1));
+	}
+	
+}

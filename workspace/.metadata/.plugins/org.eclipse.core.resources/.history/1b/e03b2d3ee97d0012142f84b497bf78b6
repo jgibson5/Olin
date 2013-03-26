@@ -1,0 +1,46 @@
+package net.joegibson.huffman;
+
+public class Node implements Comparable<Node>{
+	private String character;
+	private int freq;
+	
+	public Node() {
+		this.character = null;
+	}
+	
+	public Node(String c, int freq) {
+		this.character = c;
+		this.freq = freq;
+	}
+	
+	/**
+	 * @return the character
+	 */
+	public String getCharacter() {
+		return character;
+	}
+	/**
+	 * @param character the character to set
+	 */
+	public void setCharacter(String character) {
+		this.character = character;
+	}
+	/**
+	 * @return the freq
+	 */
+	public int getFreq() {
+		return freq;
+	}
+	/**
+	 * @param freq the freq to set
+	 */
+	public void setFreq(int freq) {
+		this.freq = freq;
+	}
+	
+	public int compareTo(Node that) {
+		return this.freq - that.getFreq();
+	}
+	
+	
+}

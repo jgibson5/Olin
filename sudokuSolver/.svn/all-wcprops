@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/jgsvn/!svn/ver/10/trunk/sudokuSolver
+END
+test2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/jgsvn/!svn/ver/10/trunk/sudokuSolver/test2.txt
+END
+sudokuSolver.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/jgsvn/!svn/ver/10/trunk/sudokuSolver/sudokuSolver.py
+END
+test.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/jgsvn/!svn/ver/10/trunk/sudokuSolver/test.txt
+END
+test1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/jgsvn/!svn/ver/10/trunk/sudokuSolver/test1.txt
+END

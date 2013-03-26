@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;Crawler.limit&apos; in &apos;Crawler&apos;&#x0A;- Original project: &apos;Crawler&apos;&#x0A;- Original element: &apos;Crawler.limit&apos;&#x0A;- Getter method name: &apos;getLimit&apos;&#x0A;- Setter method name: &apos;setLimit&apos;&#x0A;- Field visibility: &apos;public&apos;&#x0A;- Use getter and setter methods in declaring type&#x0A;- Generate method comments" comments="true" declaring="true" description="Encapsulate field &apos;limit&apos;" flags="589830" getter="getLimit" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;{Crawler.java[Crawler^limit" insertion="9" setter="setLimit" stamp="1363017325765" version="1.0" visibility="1"/>
+</session>

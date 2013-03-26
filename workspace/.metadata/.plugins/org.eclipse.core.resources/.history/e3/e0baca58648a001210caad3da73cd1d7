@@ -1,0 +1,184 @@
+/**
+ * WebCrawler exercise for traversing web pages. Loads the html of a given
+ * webpage and stores all of the links in a q. Has a while loop for grabbing the
+ * html of the found links and repeats the process.
+ * 
+ * @author jgibson
+ * @date 3-9-13
+ * @class Software Engineering at Olin College
+ * 
+ *
+ */
+
+import java.io.*;
+import java.net.*;
+import java.util.*;
+import java.util.regex.*;
+
+/**
+ * Crawler class.
+ * Takes a url and crawls the internet with that url as the point of origin.
+ * 
+ * @author jgibson
+ *
+ */
+public class Crawler {
+	
+	// q for the URLs to visit
+	private PriorityQueue<URL> q = new PriorityQueue<URL>(11, (new UrlComparator()));
+	// delay in milliseconds between visiting URLs. To prevent abusive crawling behavior.
+	private int delay = 1000;
+	// Regex pattern for pulling out the links in the html
+	private String pattern = "<a href=['\"]([^ ]*)['\"].*>(.*)</a>";
+	// Set for storing the URLs that have been visited. To prevent double checking URLs.
+	private HashSet<URL> visited = new HashSet<URL>();
+	// Number to limit the search at. Use -1 for no limit.
+	private int limit = -1;
+	
+	/**
+	 * General constructor
+	 */
+	public Crawler() {
+	}
+	
+	/**
+	 * Constructor to start crawling.
+	 * @param start the url string that you want to start at.
+	 */
+	public Crawler(String start) {
+		startCrawl(start);
+	}
+	
+	/**
+	 * Starts crawling at the string start url.
+	 * @param start
+	 */
+	public void startCrawl(String start) {
+		URL url;
+		try {
+			url = new URL(start);
+			q.add(url);
+			crawl();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Crawls URLs using q as the queue in a breadth first search algorithm.
+	 */
+	public void crawl() {
+		URL current;
+		URLConnection conn;
+		BufferedReader in;
+		String inputLine;
+		Matcher matcher;
+		
+		int count = 0;
+		while (q.peek() != null) {
+			current = q.poll();
+			System.out.println("Count: " + count);
+			try {
+				conn = current.openConnection();
+				in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+				while ((inputLine = in.readLine()) != null) {
+					if ((matcher = parse(inputLine)) != null) {
+						URL u = new URL(current, matcher.group(1));
+						//System.out.println(matcher.group(1) + "\n" + matcher.group(2));
+						if (!visited.contains(u)) {
+							visited.add(u);
+							q.add(u);
+						} else {
+
+							System.out.println("already visited");
+							System.out.println(matcher.group(1));
+						}
+					}
+				}
+				in.close();
+				count++;
+				if (count == this.limit) {
+					return;
+				}
+				Thread.sleep(this.delay);
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			
+		}
+	}
+	
+	/**
+	 * Checks the given text for the link pattern and returns the Matcher object
+	 * @param text the text to check for links
+	 * @return Matcher object if match found or null otherwise
+	 */
+	public Matcher parse(String text) {
+		Pattern pattern = Pattern.compile(this.pattern);
+	    Matcher matcher = pattern.matcher(text);
+	    while (matcher.find()) {
+	    	return matcher;
+	    }
+	    return null;
+	}
+	
+	/**
+	 * @return the delay
+	 */
+	public int getDelay() {
+		return delay;
+	}
+
+	/**
+	 * @param delay the time between url lookups
+	 */
+	public void setDelay(int delay) {
+		this.delay = delay;
+	}
+	
+
+	/**
+	 * @return the visited
+	 */
+	public HashSet<URL> getVisited() {
+		return visited;
+	}
+
+	/**
+	 * @param visited the visited to set
+	 */
+	public void setVisited(HashSet<URL> visited) {
+		this.visited = visited;
+	}
+
+	/**
+	 * @return the limit
+	 */
+	public int getLimit() {
+		return limit;
+	}
+
+	/**
+	 * @param limit the limit to set
+	 */
+	public void setLimit(int limit) {
+		this.limit = limit;
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Crawler c = new Crawler();
+		c.setLimit(5);
+		c.startCrawl("http://stackoverflow.com/questions/8181265/java-regular-expression-get-substring");
+
+	}
+
+
+
+
+}

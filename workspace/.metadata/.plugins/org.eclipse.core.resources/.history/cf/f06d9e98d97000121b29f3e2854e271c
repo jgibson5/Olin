@@ -1,0 +1,4 @@
+
+public interface Fetcher {
+	public String fetch(String);
+}

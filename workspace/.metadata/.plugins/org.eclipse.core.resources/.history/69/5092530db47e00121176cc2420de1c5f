@@ -1,0 +1,89 @@
+package net.joegibson.huffman;
+
+public class Node implements Comparable<Node>{
+	private String character;
+	private int freq;
+	private Node [] children;
+	
+	public Node() {
+		this.character = null;
+		this.children = null;
+	}
+	
+	public Node(String c, int freq) {
+		this.character = c;
+		this.freq = freq;
+	}
+	
+	public Node(Node n1, Node n2) {
+		this.character = null;
+		this.freq = n1.getFreq() + n2.getFreq();
+		this.children = new Node[2];
+		this.children[0] = n1;
+		this.children[1] = n2;
+	}
+	
+	/**
+	 * @return the character
+	 */
+	public String getCharacter() {
+		return character;
+	}
+	
+	public Node[] getChildren(){
+		return children;
+	}
+
+	/**
+	 * @param character the character to set
+	 */
+	public void setCharacter(String character) {
+		this.character = character;
+	}
+	/**
+	 * @return the freq
+	 */
+	public int getFreq() {
+		return freq;
+	}
+	/**
+	 * @param freq the freq to set
+	 */
+	public void setFreq(int freq) {
+		this.freq = freq;
+	}
+	
+	public int compareTo(Node that) {
+		return this.freq - that.getFreq();
+	}
+	
+	public String toString() {
+		return "(" + this.character + ", " + this.freq + ", " + this.children + ")";
+	}
+	public String encode(String s, String encodedString) {
+		System.out.println(encodedString + character + s);
+		System.out.println(character.equals(s));
+		
+		//System.out.println("Contains?" + o);
+		//System.out.println("Values:" + values);
+		//System.out.println("Nodes:" + nodes);
+		if (character.equals(s)) {
+			System.out.println("Found " + s);
+			return encodedString;
+		} else if (children == null) {
+			return null;
+		} else {
+			String s1 = children[0].encode(s, encodedString + "0");
+			String s2 = children[1].encode(s, encodedString + "1");
+			if (s1 != null){
+				//System.out.println(s1);
+				return s1;
+			}
+			else{
+				//System.out.println(s2);
+				return s2;
+			}
+		}
+	}
+	
+}

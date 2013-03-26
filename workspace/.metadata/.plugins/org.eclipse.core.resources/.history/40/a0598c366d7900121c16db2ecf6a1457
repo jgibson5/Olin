@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package net.joegibson.huffman;
+
+/**
+ * @author jgibson
+ *
+ */
+public class Histogram {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

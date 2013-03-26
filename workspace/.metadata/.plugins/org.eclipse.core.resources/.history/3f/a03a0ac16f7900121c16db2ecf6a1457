@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package net.joegibson.huffman;
+import java.util.HashMap;
+/**
+ * @author jgibson
+ *
+ */
+public class Histogram {
+
+	/**
+	 * @param args
+	 */
+	
+	public Histogram() {
+		HashMap<String, Integer> wordcount = new HashMap<String, Integer>();
+	}
+	
+	
+	public String toString() {
+		return charCount;
+	}
+	
+	public void count(String s) {
+		
+	}
+	
+	public void count(Character c) {
+		
+	}
+	
+	public int freq(Character c) {
+		return 0;
+	}
+
+}

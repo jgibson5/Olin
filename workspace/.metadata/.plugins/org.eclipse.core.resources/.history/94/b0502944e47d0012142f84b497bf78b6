@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package net.joegibson.huffman;
+
+/**
+ * @author jgibson
+ *
+ */
+public class HistogramTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		
+		
+		/*
+		h.count('a');
+		h.count('o');
+		System.out.println(h);
+		
+		System.out.println(h.freq('o'));
+		*/
+	}
+}

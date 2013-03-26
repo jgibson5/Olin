@@ -1,0 +1,16 @@
+import java.net.URL;
+import java.util.Comparator;
+
+/**
+ * @author jgibson
+ *
+ */
+public class UrlComparator implements Comparator<URL>{
+
+	@Override
+	public int compare(URL o1, URL o2) {
+		
+		return 0;
+	}
+	
+}

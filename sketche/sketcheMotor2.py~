@@ -1,0 +1,94 @@
+import serial  
+import time  
+
+try:  
+    ser = serial.Serial('/dev/ttyUSB0', 9600)  
+except:  
+    print "Failed to connect on /dev/ttyUSB0"  
+
+class robot():
+    """represents the robot.
+       attributes: position, color, arm, sketch
+    """
+
+    def ser_write(self, case, value):
+        bytes = [255, case, value]
+        for entry in bytes:
+            ser.write(chr(entry))
+
+    def move_arm(self, arm_pos):
+         """moves arm to up or down position with servo1"""
+         if arm_pos == "down":
+            self.ser_write(1, self.servo1_down)
+         if arm_pos == "up":
+            self.ser_write(1, self.servo1_up)
+         self.arm = arm_pos
+
+    def switch_color(self, color):
+        """switches marker color with servo2"""
+        if self.arm == "down":
+            self.move_arm("up")
+        self.ser_write(2, self.color_pos[color])
+        self.color = color
+
+    def go_to_pos(self, position):
+        """move robot to position moving only perpendicular to the x, y axis
+        """
+        x_dif = position[0] - self.position[0]
+        y_dif = position[1] - self.position[1]
+        scaling_factor = .007
+        if x_dif > 0: 
+            #forward x-dir
+            self.ser_write(3, 254)
+            #stop motors
+            time.sleep(scaling_factor*x_dif)
+            self.ser_write(7, 0)       
+        if x_dif < 0:
+            #backward x-dir
+            self.ser_write(4, 254)
+            #stop motors
+	    time.sleep(scaling_factor*-x_dif)
+            self.ser_write(7, 0)
+        if y_dif > 0: 
+            #forward y-dir
+            self.ser_write(5, 254)
+            #stop motors
+            time.sleep(scaling_factor*y_dif)
+            self.ser_write(7, 0)
+        if y_dif < 0:
+            #backward y-dir
+            self.ser_write(5, 254)
+            #stop motors
+            self.ser_write(7, 0)
+            time.sleep(scaling_factor*-y_dif)
+        self.position = position
+    
+    def draw_item(self):
+        for item in self.sketch:
+            values = self.sketch[item]
+            color = values[0]
+            coords = values[1]
+            if color != self.color:
+                self.switch_color(color)
+            self.go_to_pos(coords[0])
+            self.move_arm("down")
+            for i in range(len(coords)-1):
+                self.go_to_pos(coords[i+1])
+		time.sleep(1)
+            self.move_arm("up")
+
+    def __init__(self, sketch):
+        self.position = [0, 0]
+        self.color = "black"
+        self.arm = "down"
+        self.sketch = sketch
+
+        #constants
+
+        #servo arm positions
+        self.servo1_down = 25
+        self.servo1_up = 50
+        #color wheel positions
+        self.color_pos = {"red": 20, "#003399": 176, "yellow": 100, "black": 140}
+
+

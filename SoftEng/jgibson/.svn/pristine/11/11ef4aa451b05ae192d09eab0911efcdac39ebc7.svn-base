@@ -1,0 +1,59 @@
+package com.allendowney.graph;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+/** Represents a graph.
+ * 
+ * @author downey
+ *
+ */
+public class Graph {
+	private ArrayList<Node> nodes = new ArrayList<Node>();
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Graph [nodes=" + nodes + "]";
+	}
+
+	/** Adds a node to the graph.
+	 * 
+	 * @param node
+	 */
+	public void addNode(Node node) {
+		nodes.add(node);
+	}
+	
+	/** Returns true if this graph is a tree; false otherwise.
+	 * 
+	 * @return
+	 */
+	public boolean isTree() {
+	    // fill this in!
+		return false;
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Graph g = new Graph();
+		Node node1 = new Node("A");
+		
+		g.addNode(node1);
+		System.out.println(g.isTree());
+
+		Node node2 = new Node("B");
+		node1.addChild(node2);
+		g.addNode(node2);
+		
+		System.out.println(g.isTree());
+		
+		node1.addChild(node1);
+		System.out.println(g.isTree());
+	}
+}

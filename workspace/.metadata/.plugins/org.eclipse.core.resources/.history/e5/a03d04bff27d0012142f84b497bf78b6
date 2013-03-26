@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package net.joegibson.huffman;
+
+/**
+ * @author jgibson
+ *
+ */
+public class HuffmanTree{
+	public Node bigTree;
+	
+	public String Encode(String string){
+		String encodedString = "";
+		for (Character c: string.toCharArray()){
+			String s = c.toString();
+			
+		}
+		return encodedString;
+	}
+	
+	public String traverseTree(String s){
+		
+		return null;
+	}
+	
+	public String Decode(String binary){
+		return null;
+	}
+	
+	public void construct(Histogram h, String filePath){
+		h.readTest(filePath);
+		while (h.getPriorityQueue().size() >1){
+			Node childNode1 = h.poll();
+			Node childNode2 = h.poll();
+			Node parent = new Node(childNode1, childNode2);
+			h.addToQueue(parent);
+		}
+		bigTree = h.poll();
+	}
+
+	public String toString(){
+		return bigTree.toString();
+	}
+
+}

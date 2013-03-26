@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package net.joegibson.huffman;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+/**
+ * @author jgibson
+ *
+ */
+public class HistogramTest1 {
+
+	@Test
+	public void testCount() {
+		Histogram h = new Histogram();
+		h.count("moose");
+		assertEquals("{e=1, s=1, o=2, m=1}", h.toString());
+	}
+
+	@Test
+	public void testCountChar() {
+		Histogram h - new Histogram();
+		h.count('a');
+		assertEquals("{a=1}", h.toString());
+	}
+}

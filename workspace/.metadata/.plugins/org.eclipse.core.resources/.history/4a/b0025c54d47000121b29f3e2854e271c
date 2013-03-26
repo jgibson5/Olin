@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+
+public class AnimalPack {
+	private ArrayList<Animal> animals;
+	
+	public void makeArray(int size) {
+		/** Sets the size of the dogs array to size.
+		  * @param int size
+		  */
+	}
+	
+	public void addDog(int index, Animal a) {
+		/** Sets the dog at the index index of array dogs to d.
+		  * @param int index
+		  * @param Dog d 
+		  */
+		animals.add(a);
+	}
+	
+	public Animal biggestDog() {
+		/** Returns the Dog in the array dogs that has the largest size.
+		  * Uses the Dog.isBigger method. 
+		  * @return Dog
+		  */
+		Animal biggest = new Animal();
+		biggest.setSize(0);
+		for (Animal a : animals) {
+			if (a.isBigger(biggest)) {
+				biggest = a;
+			}
+		}
+		return biggest;
+	}
+}
